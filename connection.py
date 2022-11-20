@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 def config(connection_db):
     path = os.getcwd()
     with open(path+'/'+'config.json') as file:
-        conf = json.load(file)['marketplace_prod']
+        conf = json.load(file)[connection_db]
     return conf
 
 def psql_conn(conf, name_conn):
